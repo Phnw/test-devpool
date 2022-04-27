@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    body {
+      //font-family: 'Tangerine', serif;
+      //font-family: 'Sriracha', cursive;
+      //font-family: 'Prompt', sans-serif;
+      font-family: 'Mali', cursive;
+      background-color: #b2dfdb;
+    }
+
+    table {
+      //font-family: 'Prompt', sans-serif;
+      font-family: 'Mali', cursive;
+      font-size: 0.7em;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="contianer">
+    <div class="row  mt-3 ">
+      <center>
+        <h3>หมวกคัดสรร (The Sorting Hat)</h3>
+      </center>
+
+    </div>
+
+    <center>
+      <div class="card col-sm-10 col-md-6 col-lg-6 mt-3">
+        <div class="card-body " style="background-color: #e0f2f2;">
+          <div class="row">
+            <center>
+              <div class="col-sm-10 col-md-6 col-lg-6">
+                <input type="text" class="form-control mb-3 text-primary" style="height:40px;"  placeholder="กรุณากรอกชื่อ-สกุล" id="NAME" >
+              </div>
+            </center>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="btn col-10  col-lg-3  col-sm-4  shadow p-3 text-white text-center mb-2 overflow-hidden" id= "btnSave" type="button" onclick="selecthome()" style="background-color: #26a59a; height:55px;"><img src="https://img.icons8.com/color/30/000000/save--v1.png"/><b> บันทึกข้อมูล </b></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </center>
+
+
+    <div class="row justify-content-around mt-3">
+
+      <div class="col-ms-10 offset-ms-1 col-md-5 offset-md-1 col-lg-2 offset-lg-1">
+        <div class="card" style="width: 10rem;">
+          <img src="https://sites.google.com/site/reuxngnaruharrypotter/_/rsrc/1507045681785/4ban-ni-harry-potter/pic048.gif" class="card-img-top" >
+          <div class="card-body">
+            <p class="card-text text-center">บ้านกริฟฟินดอร์</p>
+            <b><h5><p class="card-text text-center" id="Gryffindor"><p></b></h5>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-ms-10 offset-ms-1 col-md-5 offset-md-1 col-lg-2 offset-lg-1">
+        <div class="card" style="width: 10rem;">
+          <img src="https://sites.google.com/site/reuxngnaruharrypotter/_/rsrc/1507046466313/4ban-ni-harry-potter/link14_clip_image001_0001.gif" class="card-img-top" >
+          <div class="card-body">
+            <p class="card-text text-center">บ้านฮัฟเฟิลพัฟ</p>
+            <b><h5><p class="card-text text-center" id="Hufflepuff"><p></b></h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-ms-10 offset-ms-1 col-md-5 offset-md-1 col-lg-2 offset-lg-1">
+        <div class="card" style="width: 10rem;">
+          <img src="https://sites.google.com/site/reuxngnaruharrypotter/_/rsrc/1507046669209/4ban-ni-harry-potter/link14_clip_image001_0002.gif" class="card-img-top" >
+          <div class="card-body">
+            <p class="card-text text-center">บ้านเรเวนคลอ</p>
+            <b><h5><p class="card-text text-center" id="Ravenclaw"><p></b></h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-ms-10 offset-ms-1 col-md-5 offset-md-1 col-lg-2 offset-lg-1">
+        <div class="card" style="width: 10rem;">
+          <img src="https://sites.google.com/site/reuxngnaruharrypotter/_/rsrc/1507046918012/4ban-ni-harry-potter/link14_clip_image001_0003.gif" class="card-img-top" >
+          <div class="card-body">
+            <p class="card-text text-center">บ้านสลิธีรีน</p>
+            <b><h5><p class="card-text text-center" id="Slytherin"><p></b></h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+  <script>
+    function selecthome(){
+
+      google.script.run.withSuccessHandler(homeforyou).randomhome()
+
+      function homeforyou(home){
+
+        document.getElementById("Gryffindor").innerHTML= home[0];
+        document.getElementById("Hufflepuff").innerHTML= home[1];
+        document.getElementById("Ravenclaw").innerHTML= home[2];
+        document.getElementById("Slytherin").innerHTML= home[3];
+        
+      }
+
+
+
+    }
+
+  var input3 = document.getElementById("NAME");
+  input3.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("btnSave").click();
+  }
+});
+
+  </script>
+</body>
+
+</html>
